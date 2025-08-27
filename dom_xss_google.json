@@ -1,0 +1,35 @@
+[
+    {
+        "cmd_injection": {
+            "vulnerabilities": [],
+            "vulnerable": false
+        },
+        "cookies": [],
+        "errors": [],
+        "forms": [],
+        "headers": {
+            "missing": [
+                "Strict-Transport-Security",
+                "X-Frame-Options",
+                "Content-Security-Policy",
+                "X-Content-Type-Options",
+                "Permissions-Policy",
+                "Referrer-Policy"
+            ],
+            "present": {}
+        },
+        "open_redirect": {
+            "vulnerabilities": [],
+            "vulnerable": false
+        },
+        "sqli": {
+            "vulnerabilities": [],
+            "vulnerable": false
+        },
+        "url": "https://xss-game.appspot.com/level1/frame?query=test",
+        "xss": {
+            "reflected": false,
+            "vulnerabilities": []
+        }
+    }
+]

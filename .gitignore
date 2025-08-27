@@ -1,0 +1,52 @@
+cat > .gitignore << 'EOF'
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.dist/
+build/
+.cache/
+
+# Virtual envs
+venv/
+.env/
+
+# Test/coverage
+.pytest_cache/
+.coverage
+htmlcov/
+
+# Local outputs & reports
+scan*.csv
+scan*.html
+scan*.txt
+report*.csv
+report*.html
+report*.txt
+full_scan.*.csv
+full_scan.*.html
+full_scan.*.txt
+results.json
+result.json
+reports/
+*.log
+# Ignore generated reports
+*.csv
+*.html
+*.txt
+results.json
+result.json
+full_scan.*
+scan.*
+report.*
+scan_report_*
+old_reports/
+
+
+# OS/editor
+.DS_Store
+Thumbs.db
+
+# Large local binaries
+google-chrome-stable_current_amd64.deb
+EOF

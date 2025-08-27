@@ -1,0 +1,52 @@
+[
+    {
+        "cmd_injection": {
+            "vulnerabilities": [],
+            "vulnerable": false
+        },
+        "cookies": [],
+        "errors": [],
+        "forms": [
+            {
+                "action": "search.php?test=query",
+                "inputs": [
+                    {
+                        "name": "searchFor",
+                        "type": "text",
+                        "value": ""
+                    },
+                    {
+                        "name": "goButton",
+                        "type": "submit",
+                        "value": "go"
+                    }
+                ],
+                "method": "post"
+            }
+        ],
+        "headers": {
+            "missing": [
+                "Strict-Transport-Security",
+                "X-Frame-Options",
+                "Content-Security-Policy",
+                "X-Content-Type-Options",
+                "Permissions-Policy",
+                "Referrer-Policy"
+            ],
+            "present": {}
+        },
+        "open_redirect": {
+            "vulnerabilities": [],
+            "vulnerable": false
+        },
+        "sqli": {
+            "vulnerabilities": [],
+            "vulnerable": false
+        },
+        "url": "http://testphp.vulnweb.com",
+        "xss": {
+            "reflected": false,
+            "vulnerabilities": []
+        }
+    }
+]
