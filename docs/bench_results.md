@@ -1,0 +1,3 @@
+| URL | Status | Seconds | Total Vulns | cmd_injection | sqli | xss | open_redirect | headers | cookies | errors | cmd_injection_vuln | sqli_vuln | xss_vuln | open_redirect_vuln | headers_vuln | cookies_vuln | errors_vuln | error |
+|---|---|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|---|
+| http://testphp.vulnweb.com | ok | 15.78 | 6 |  | 6 | 0 | 0 | 0 | 0 | 0 | 0 | True | False | False | False | False | False | False |

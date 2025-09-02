@@ -7,15 +7,15 @@ PROJECT_ROOT = os.path.abspath(os.path.join(os.path.dirname(__file__), ".."))
 
 def _run_scanner(args=None, **popen_kwargs):
     """
-    Helper to invoke the scanner via module execution to ensure package imports work.
-    Uses the same interpreter running pytest (sys.executable).
+    Helper to invoke the scanner as a script from the repo root.
+    This avoids Python package import issues in CI.
     """
-    cmd = [sys.executable, "-m", "core.scanner"]
+    repo_root = os.path.abspath(os.path.join(os.path.dirname(__file__), ".."))
+    cmd = [sys.executable, os.path.join(repo_root, "core", "scanner.py")]
     if args:
         cmd.extend(args)
-    # Ensure project root is on the import path for the child process
+
     env = popen_kwargs.pop("env", os.environ.copy())
-    env.setdefault("PYTHONPATH", PROJECT_ROOT)
     return subprocess.run(
         cmd,
         stdout=subprocess.PIPE,
