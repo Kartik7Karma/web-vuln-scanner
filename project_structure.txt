@@ -1,0 +1,102 @@
+.
+├── .coverage
+├── .github
+│   └── workflows
+├── .gitignore
+├── .gitignore.bak
+├── CONTRIBUTING.md
+├── DISCLAIMER.md
+├── LICENSE
+├── README.md
+├── SECURITY.md
+├── blind_sqli.json
+├── cmd_advanced.json
+├── cmd_basic.json
+├── core
+│   ├── __init__.py
+│   ├── forms.py
+│   ├── logger.py
+│   ├── scanner.py
+│   └── utils.py
+├── csrf.json
+├── dir_traversal.json
+├── dom_xss.json
+├── dom_xss_google.json
+├── full_scan.csv
+├── full_scan.html
+├── full_scan.py
+├── full_scan.txt
+├── google-chrome-stable_current_amd64.deb
+├── misconfig.json
+├── payloads
+│   ├── __init__.py
+│   ├── payloads.py
+│   └── xss.json
+├── project_structure.txt
+├── report.csv
+├── report.html
+├── report.txt
+├── reports
+│   ├── __init__.py
+│   ├── csv_report_generator.py
+│   ├── html_report_generator.py
+│   ├── output_utils.py
+│   ├── report_generator.py
+│   └── text_report_generator.py
+├── requirements.txt
+├── result.json
+├── results.json
+├── scan.csv
+├── scan.html
+├── scan.json
+├── scan_report_20250804_043446.txt
+├── scan_report_20250804_043850.txt
+├── scan_report_20250804_044203.txt
+├── scan_report_20250804_044342.txt
+├── scan_report_20250804_044723.csv
+├── scan_report_20250804_044723.txt
+├── scan_report_20250804_045113.csv
+├── scan_report_20250804_045113.txt
+├── scan_report_20250804_045315.csv
+├── scan_report_20250804_045315.txt
+├── scan_report_20250804_050621.csv
+├── scan_report_20250804_050621.txt
+├── scan_report_20250805_040107.csv
+├── scan_report_20250805_040107.txt
+├── scan_report_20250805_040302.csv
+├── scan_report_20250805_040302.txt
+├── scan_report_20250805_040706.csv
+├── scan_report_20250805_040706.txt
+├── scan_report_20250805_041044.csv
+├── scanner_plan.md
+├── scanners
+│   ├── __init__.py
+│   ├── blind_sqli_scanner.py
+│   ├── cmd_injection_scanner.py
+│   ├── csrf_scanner.py
+│   ├── directory_traversal.py
+│   ├── dom_xss_scanner.py
+│   ├── headers_cookies_check.py
+│   ├── misconfiguration_scanner.py
+│   ├── open_redirect_scanner.py
+│   ├── sqli_scanner.py
+│   └── xss_scanner.py
+├── sqli.json
+├── tests
+│   ├── __init__.py
+│   ├── test_cli_entry.py
+│   ├── test_csrf_scanner.py
+│   ├── test_forms.py
+│   ├── test_logger.py
+│   ├── test_sqli_scanner.py
+│   ├── test_utils.py
+│   └── test_xss_scanner.py
+├── urls.txt
+└── venv
+    ├── bin
+    ├── include
+    ├── lib
+    ├── lib64 -> lib
+    └── pyvenv.cfg
+
+13 directories, 87 files

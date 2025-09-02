@@ -1,0 +1,2 @@
+url,status,seconds,vulns_total,error,cat:cmd_injection,cat:sqli,cat:xss,cat:open_redirect,cat:headers,cat:cookies,cat:errors,cmd_injection_vulnerable,sqli_vulnerable,xss_vulnerable,open_redirect_vulnerable,headers_vulnerable,cookies_vulnerable,errors_vulnerable
+http://testphp.vulnweb.com,ok,15.78,6,,6,0,0,0,0,0,0,True,False,False,False,False,False,False

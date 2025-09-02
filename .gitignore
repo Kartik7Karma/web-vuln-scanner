@@ -1,52 +1,77 @@
-cat > .gitignore << 'EOF'
-# Python
+# Python bytecode and cache
 __pycache__/
 *.py[cod]
-*.egg-info/
-.dist/
+*$py.class
+
+# Packaging / build outputs
 build/
-.cache/
+dist/
+.build/
+*.egg-info/
+.eggs/
 
-# Virtual envs
+# Virtual environments / dotenv
 venv/
+.venv/
+env/
+ENV/
 .env/
+.env.*
 
-# Test/coverage
+
+# Test and coverage
 .pytest_cache/
 .coverage
+.coverage.*
 htmlcov/
 
 # Local outputs & reports
-scan*.csv
-scan*.html
-scan*.txt
-report*.csv
-report*.html
-report*.txt
-full_scan.*.csv
-full_scan.*.html
-full_scan.*.txt
-results.json
-result.json
-reports/
+# logs and JSON run outputs
 *.log
-# Ignore generated reports
-*.csv
-*.html
-*.txt
 results.json
 result.json
+
+# csv/html/txt report patterns
+scan*.{csv,html,txt}
+report*.{csv,html,txt}
+full_scan*.{csv,html,txt}
+
+# broader fallbacks (keep near end)
 full_scan.*
 scan.*
 report.*
 scan_report_*
+
+# report folders
+reports/
 old_reports/
 
+# Tool caches
+.cache/
 
-# OS/editor
+# OS / editor / IDE noise
 .DS_Store
 Thumbs.db
 
+# VS Code
+.vscode/
+
+# JetBrains (PyCharm)
+.idea/
+*.iml
+
+# Backups / misc locals
+*.bak
+*.local
+*.secret
+*.envrc
+
 # Large local binaries
 google-chrome-stable_current_amd64.deb
-EOF
+
+# -------------------------
+# Project-specific optional ignores
+# -------------------------
+# If bench/ contains large experiment outputs, keep code but ignore outputs:
+# bench/**/outputs/
+# bench/**/results/

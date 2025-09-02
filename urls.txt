@@ -1,0 +1,9 @@
+http://testphp.vulnweb.com
+http://demo.testfire.net
+http://zero.webappsecurity.com
+http://xss-game.appspot.com
+http://bodgeit.herokuapp.com
+http://bwapp.hackxor.net
+http://ptl-7b4017c3-8e82d8d6.libcurl.so
+http://public-firing-range.appspot.com
+http://webappsec-test-sites.securify.nl
