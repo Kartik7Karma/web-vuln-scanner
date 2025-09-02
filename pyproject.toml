@@ -29,5 +29,5 @@ dev = [
 ]
 
 [tool.setuptools.packages.find]
-where = ["."]
-include = ["core*", "scanners*", "reports*", "payloads*"]
+include = ["scanners*", "reports*", "bench*"]
+
