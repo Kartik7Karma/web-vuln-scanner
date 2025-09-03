@@ -11,7 +11,7 @@ def _run_scanner(args=None, **popen_kwargs):
     This avoids Python package import issues in CI.
     """
     repo_root = os.path.abspath(os.path.join(os.path.dirname(__file__), ".."))
-    cmd = [sys.executable, os.path.join(repo_root, "core", "scanner.py")]
+    cmd = [sys.executable, "-m", "core.scanner"]
     if args:
         cmd.extend(args)
 
