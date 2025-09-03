@@ -1,0 +1,15 @@
+# MANIFEST.in
+
+# Include all Python files from main packages
+recursive-include core *.py
+recursive-include scanners *.py
+recursive-include reports *.py
+recursive-include payloads *.py
+
+# Include important docs
+include README.md
+include LICENSE
+include pyproject.toml
+
+# Exclude caches and temporary files
+global-exclude __pycache__ *.py[cod] *.so
