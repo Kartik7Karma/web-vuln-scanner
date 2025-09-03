@@ -29,5 +29,8 @@ dev = [
 ]
 
 [tool.setuptools.packages.find]
-include = ["scanners*", "reports*", "bench*"]
+where = ["."]
+include = ["core*", "scanners*", "payloads*", "reports*"]
+exclude = ["tests*", "docs*"]
+
 
