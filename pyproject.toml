@@ -33,13 +33,7 @@ include-package-data = true
 
 [tool.setuptools.packages.find]
 where = ["."]
-# ✅ Explicitly include all main packages
-include = [
-    "core*",
-    "scanners*",
-    "payloads*",
-    "reports*"
-]
+include = ["core*", "scanners*", "payloads*", "reports*"]
 exclude = ["tests*", "docs*"]
 
 [tool.setuptools.package-data]
