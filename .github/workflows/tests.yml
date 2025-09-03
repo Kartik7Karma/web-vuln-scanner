@@ -5,8 +5,12 @@ on:
   pull_request:
 
 jobs:
-  test:
+  test-dev:
     runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        python-version: ["3.9", "3.10", "3.11", "3.12"]
+    name: Run tests (dev install, Python ${{ matrix.python-version }})
 
     steps:
       - name: Checkout repository
@@ -15,20 +19,36 @@ jobs:
       - name: Set up Python
         uses: actions/setup-python@v4
         with:
-          python-version: "3.12"
+          python-version: ${{ matrix.python-version }}
 
-      - name: Install dependencies
+      - name: Install dependencies (dev mode)
         run: |
-          run: |
           python -m pip install --upgrade pip
-          pip install -e .[dev]  
-          
-      - name: Install package
-        run: pip install -e .
+          pip install -e .[dev]
 
-      - name: Run tests
+      - name: Run pytest
         run: pytest tests --maxfail=1 --disable-warnings -q
 
+  test-user:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        python-version: ["3.9", "3.10", "3.11", "3.12"]
+    name: Verify user install (Python ${{ matrix.python-version }})
 
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
 
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: ${{ matrix.python-version }}
 
+      - name: Install package (user mode)
+        run: |
+          python -m pip install --upgrade pip
+          pip install .
+
+      - name: Import check
+        run: python -c "import reports, core, scanners, payloads; print('✅ User install works fine')"
