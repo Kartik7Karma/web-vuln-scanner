@@ -1,15 +1,28 @@
-# MANIFEST.in
-
-# Include all Python files from main packages
-recursive-include core *.py
-recursive-include scanners *.py
-recursive-include reports *.py
-recursive-include payloads *.py
-
-# Include important docs
+# Include the README and license
 include README.md
 include LICENSE
+
+# Include pyproject.toml (some platforms use it)
 include pyproject.toml
 
-# Exclude caches and temporary files
-global-exclude __pycache__ *.py[cod] *.so
+# Include requirements files if you have them
+include requirements.txt
+include requirements-dev.txt
+
+# Include all Python files (redundant but explicit)
+recursive-include core *.py
+recursive-include reports *.py
+recursive-include scanners *.py
+recursive-include payloads *.py
+
+# Include tests (optional if you want users to get tests in the sdist)
+recursive-include tests *.py
+
+# Include data/config files if any (adjust extensions as needed)
+recursive-include core *.json
+recursive-include core *.yaml *.yml
+recursive-include reports *.json *.csv *.html *.txt
+
+# Exclude build junk
+exclude *.pyc
+exclude __pycache__

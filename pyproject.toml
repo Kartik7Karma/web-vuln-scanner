@@ -12,7 +12,7 @@ authors = [
 readme = "README.md"
 requires-python = ">=3.8"
 
-# 🚀 Runtime dependencies — only what the scanner imports directly
+# Runtime dependencies
 dependencies = [
     "requests>=2.32.0",
     "beautifulsoup4>=4.13.0",
@@ -20,7 +20,6 @@ dependencies = [
 ]
 
 [project.optional-dependencies]
-# 👨‍💻 Developer extras for testing & debugging
 dev = [
     "pytest>=8.0",
     "coverage>=7.0",
@@ -28,9 +27,22 @@ dev = [
     "pipdeptree",
 ]
 
+[tool.setuptools]
+# ✅ Respect MANIFEST.in
+include-package-data = true
+
 [tool.setuptools.packages.find]
 where = ["."]
-include = ["core*", "scanners*", "payloads*", "reports*"]
+# ✅ Explicitly include all main packages
+include = [
+    "core*",
+    "scanners*",
+    "payloads*",
+    "reports*"
+]
 exclude = ["tests*", "docs*"]
 
-
+[tool.setuptools.package-data]
+# ✅ Ensure extra resources are bundled
+"reports" = ["*.txt", "*.csv", "*.html", "*.json"]
+"payloads" = ["*.txt", "*.json"]
