@@ -51,7 +51,7 @@ jobs:
           pip install --no-cache-dir .
 
       - name: Import check
-        run: python -c "import reports, core, scanners, payloads; print('✅ User install works fine')"
+        run: python -c "import reporting, core, scanners, payloads; print('✅ User install works fine')"
 
   build-and-test-wheel:
     runs-on: ubuntu-latest
@@ -79,4 +79,4 @@ jobs:
         run: pip install dist/*.whl
 
       - name: Import check (wheel install)
-        run: python -c "import reports, core, scanners, payloads; print('✅ Wheel install works fine')"
+        run: python -c "import reporting, core, scanners, payloads; print('✅ Wheel install works fine')"

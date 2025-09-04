@@ -33,17 +33,10 @@ include-package-data = true
 
 [tool.setuptools.packages.find]
 where = ["."]
-include = [
-    "core", "core.*",
-    "reports", "reports.*",
-    "scanners", "scanners.*",
-    "payloads", "payloads.*"
-]
+include = ["core*", "scanners*", "payloads*", "reporting*"]
 exclude = ["tests*", "docs*"]
 
-
-
 [tool.setuptools.package-data]
-# ✅ Ensure extra resources are bundled
-"reports" = ["*.txt", "*.csv", "*.html", "*.json"]
+"reporting" = ["*.txt", "*.csv", "*.html", "*.json"]
 "payloads" = ["*.txt", "*.json"]
+

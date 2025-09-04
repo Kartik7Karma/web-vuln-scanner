@@ -21,10 +21,10 @@ from scanners.csrf_scanner import scan_csrf
 from scanners.blind_sqli_scanner import run as blind_sqli_run
 from scanners.dom_xss_scanner import run as dom_xss_run
 from scanners.directory_traversal import test_directory_traversal
-from reports.output_utils import save_results_to_json
-from reports.html_report_generator import generate_html_report, save_html
-from reports.csv_report_generator import generate_csv_report
-from reports.text_report_generator import generate_text_report
+from reporting.output_utils import save_results_to_json
+from reporting.html_report_generator import generate_html_report, save_html
+from reporting.csv_report_generator import generate_csv_report
+from reporting.text_report_generator import generate_text_report
 from payloads.payloads import (
     xss_payloads,
     sqli_payloads,
