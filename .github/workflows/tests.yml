@@ -52,3 +52,32 @@ jobs:
 
       - name: Import check
         run: python -c "import reports, core, scanners, payloads; print('✅ User install works fine')"
+  
+  build-and-test-wheel:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        python-version: ["3.9", "3.10", "3.11", "3.12"]
+    name: Verify wheel install (Python ${{ matrix.python-version }})
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: ${{ matrix.python-version }}
+
+      - name: Install build tools
+        run: |
+          python -m pip install --upgrade pip build
+
+      - name: Build wheel + sdist
+        run: python -m build
+
+      - name: Install from wheel
+        run: pip install dist/*.whl
+
+      - name: Import check (wheel install)
+        run: python -c "import reports, core, scanners, payloads; print('✅ Wheel install works fine')"
